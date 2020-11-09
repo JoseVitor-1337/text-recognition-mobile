@@ -14,6 +14,15 @@ const styles = StyleSheet.create({
   footer: {
     flex: 1,
     backgroundColor: "#536DFE",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  cameraBox: {
+    padding: 12,
+    borderStyle: "solid",
+    backgroundColor: "#FFFFFF",
+    borderRadius: 100,
   },
 });
 

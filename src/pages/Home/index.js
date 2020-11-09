@@ -17,7 +17,9 @@ export default function Home({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image style={styles.image} source={Document} resizeMode="cover" />
+        <View style={styles.imageBox}>
+          <Image style={styles.image} source={Document} resizeMode="cover" />
+        </View>
       </View>
 
       <View style={styles.textContainer}>
