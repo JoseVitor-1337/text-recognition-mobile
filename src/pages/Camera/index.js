@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity, Text } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 
 import styles from "./style";
@@ -20,6 +20,18 @@ export default function Camera() {
     }
   }
 
+    async function showReconizationResult() {
+    if (camera) {
+      try {
+        const picture = await camera.current.takePictureAsync();
+
+        console.log(picture);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }
+
   return (
     <>
       <View style={styles.camera}>
@@ -28,6 +40,10 @@ export default function Camera() {
       <View style={styles.footer}>
         <TouchableOpacity style={styles.cameraBox} onPress={takePicture}>
           <FontAwesome name="camera-retro" size={60} color="#536DFE" />
+        </TouchableOpacity>
+
+         <TouchableOpacity style={styles.button} onPress={showReconizationResult}>
+          <Text style={styles.buttonText}>Mostrar resultados parciais</Text>
         </TouchableOpacity>
       </View>
     </>

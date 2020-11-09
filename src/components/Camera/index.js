@@ -38,7 +38,9 @@ export default function CameraComponent({ setCamera }) {
             backgroundColor: "transparent",
             flexDirection: "row",
           }}
-        ></View>
+        >
+        
+        </View>
       </Camera>
     </View>
   );
