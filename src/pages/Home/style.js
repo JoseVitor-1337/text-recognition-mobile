@@ -8,24 +8,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
   },
   imageContainer: {
-    flex: 1,
-    backgroundColor: "#536DFE",
+    flex: 10,
     alignItems: "center",
     justifyContent: "center",
     alignSelf: "stretch",
   },
-  imageBox: {
-    width: 150,
-    height: 150,
-    marginBottom: -135,
-    borderRadius: 100,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#FFFFFF",
-    borderStyle: "solid",
-    borderWidth: 4,
-    borderColor: "#536DFE",
-  },
+
   image: {
     width: 120,
     height: 120,

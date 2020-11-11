@@ -9,8 +9,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#000000",
   },
   camera: {
-    flex: 4,
-     backgroundColor: "#000000",
+    flex: 2,
+    backgroundColor: "#000000",
   },
   footer: {
     flex: 1,
@@ -31,9 +31,8 @@ const styles = StyleSheet.create({
     borderStyle: "solid",
     borderWidth: 4,
     borderColor: "#536DFE",
-   
   },
-   button: {
+  button: {
     height: 50,
     paddingVertical: 8,
     paddingHorizontal: 20,

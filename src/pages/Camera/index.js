@@ -5,6 +5,8 @@ import { FontAwesome } from "@expo/vector-icons";
 import styles from "./style";
 import ComponentCamera from "../../components/Camera";
 
+import API from "../../services/api";
+
 export default function Camera() {
   const [camera, setCamera] = useState(null);
 
@@ -13,17 +15,7 @@ export default function Camera() {
       try {
         const picture = await camera.current.takePictureAsync();
 
-        console.log(picture);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-  }
-
-    async function showReconizationResult() {
-    if (camera) {
-      try {
-        const picture = await camera.current.takePictureAsync();
+        API.post("");
 
         console.log(picture);
       } catch (error) {
@@ -31,6 +23,8 @@ export default function Camera() {
       }
     }
   }
+
+  async function showReconizationResult() {}
 
   return (
     <>
@@ -42,7 +36,10 @@ export default function Camera() {
           <FontAwesome name="camera-retro" size={60} color="#536DFE" />
         </TouchableOpacity>
 
-         <TouchableOpacity style={styles.button} onPress={showReconizationResult}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={showReconizationResult}
+        >
           <Text style={styles.buttonText}>Mostrar resultados parciais</Text>
         </TouchableOpacity>
       </View>
