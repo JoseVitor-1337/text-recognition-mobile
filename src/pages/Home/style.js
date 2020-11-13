@@ -5,18 +5,23 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "space-between",
-    backgroundColor: "#FFFFFF",
+    
+  },
+  background: {
+    flex: 1,
+    resizeMode: "contain",
+    justifyContent: "center"
   },
   imageContainer: {
-    flex: 10,
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
     alignSelf: "stretch",
-  },
 
+  },
   image: {
-    width: 120,
-    height: 120,
+    width: 80,
+    height: 80,
     borderRadius: 50,
     backgroundColor: "transparent",
   },
@@ -24,10 +29,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: "Roboto_700Bold",
     textAlign: "justify",
-    color: "#536DFE",
+    color: "#FFFFFF",
   },
   textContainer: {
-    flex: 2,
+    flex:1,
     alignItems: "center",
     justifyContent: "space-around",
     padding: 10,
@@ -39,14 +44,14 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#536DFE",
+    backgroundColor: "#FFFFFF",
     borderRadius: 20,
   },
   buttonText: {
     fontSize: 16,
-    fontFamily: "Roboto_400Regular",
+    fontFamily: "Roboto_700Bold",
     textAlign: "center",
-    color: "#FFFFFF",
+    color: "#536DFE",
   },
 });
 

@@ -4,33 +4,44 @@ import {
   View,
   Text,
   TouchableOpacity,
+  ImageBackground,
   Image,
 } from "react-native";
 
-import HeaderLogo from "../../assets/images/header-logo.png";
+import background from "../../assets/images/background.png";
+import logo from "../../assets/images/logo.png";
 import styles from "./style";
 
 export default function Home({ navigation }) {
   function goToCamera() {
-    navigation.navigate("Camera");
+    navigation.navigate("Dashboard");
   }
-  return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.imageContainer}>
-        <Image source={HeaderLogo} resizeMode="cover" />
-      </View>
 
-      <View style={styles.textContainer}>
-        <TouchableOpacity
-          onPress={goToCamera}
-          activeOpacity={0.8}
-          style={styles.button}
-        >
-          <Text style={styles.buttonText}>
-            Acessar câmera para salvar padrões do Gabarito
+
+
+
+  return (
+   
+      <ImageBackground source={background} style={styles.background}>
+        <View style={styles.imageContainer}>
+          <Image source={logo} resizeMode="cover" />
+        </View>
+
+        <View style={styles.textContainer}>
+          <Text style={styles.title}>
+            Correção automática de cartões respostas de provas aplicadas em vertibulares e concursos.
           </Text>
-        </TouchableOpacity>
-      </View>
-    </SafeAreaView>
+          <TouchableOpacity
+            onPress={goToCamera}
+            activeOpacity={0.8}
+            style={styles.button}
+          >
+            <Text style={styles.buttonText}>
+              Iniciar Sessão
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </ImageBackground>
+     
   );
 }

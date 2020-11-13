@@ -5,14 +5,14 @@ import { createStackNavigator } from "@react-navigation/stack";
 const { Navigator, Screen } = createStackNavigator();
 
 import Home from "./pages/Home";
-import Camera from "./pages/Camera";
+import Dashboard from "./pages/Dashboard";
 
 export default function Routes() {
   return (
     <NavigationContainer>
       <Navigator screenOptions={{ headerShown: false }}>
         <Screen name="Home" component={Home} />
-        <Screen name="Camera" component={Camera} />
+        <Screen name="Dashboard" component={Dashboard} />
       </Navigator>
     </NavigationContainer>
   );
