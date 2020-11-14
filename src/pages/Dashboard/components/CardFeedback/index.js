@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { View, FlatList, TouchableOpacity, Text, Image } from "react-native";
-
-import styles from "./style";
-
+import { View, FlatList, Dimensions } from "react-native";
+import { FontAwesome } from '@expo/vector-icons'
 import logo from "../../../../assets/images/logo.png";
 
-export default function CardFeedback({ feedback, makeCorrections}) {
+import { Card, Header, Image, Title, TableContainer, Text, FlatListView, TableTextNumber, ButtonContainer, Table, LetterDiv, NumberDiv, TableText, FeedbackContainer, Button, ButtonText } from './style'
+
+export default function CardFeedback({ feedback, goMakeCorrections }) {
 
   const feedbackAnswwer = [{
     title: "LÍNGUA PORTUGUESA",
@@ -43,47 +43,54 @@ export default function CardFeedback({ feedback, makeCorrections}) {
 
 
   const renderItem = ({ item }) => (
-    <View style={styles.feedbackContainer}>
-      <Text style={styles.title}>{item.title}</Text>
-      {item.answers.map(alternative => (
-        <View style={styles.table}>
-          <Text style={styles.tableText}>{alternative.number}</Text>
-          <Text style={styles.tableText}>{alternative.letter}</Text>
-        </View>
-      ))}
-    </View>
+    <FeedbackContainer >
+      <Title>{item.title}</Title>
+      <TableContainer>
+        {item.answers.map(alternative => (
+          <Table key={alternative.number}>
+            <NumberDiv>
+              <TableTextNumber>{alternative.number}</TableTextNumber>
+            </NumberDiv>
+            <LetterDiv>
+              <TableText>{alternative.letter}</TableText>
+            </LetterDiv>
+          </Table>
+        ))}
+      </TableContainer>
+    </FeedbackContainer>
   );
 
   return (
-    <View style={styles.card}>
-      <View style={styles.header}>
-        <Image style={styles.image} source={logo} resizeMode="contain" />
+    <Card width={Dimensions.get("window").width}>
+      <Header>
+        <Image source={logo} resizeMode="contain" />
         <View>
-          <Text style={styles.title}>{feedback.description}</Text>
-          <Text style={styles.date}>{feedback.date}</Text>
+          <Text>{feedback.description}</Text>
+          <Text>{`Data: ${feedback.date}`}</Text>
         </View>
-      </View>
+      </Header>
 
       
 
-      <View style={styles.feedback}>
+      <FlatListView>
         <FlatList 
-          style={styles.feedbackAnswer} 
-          horizontal={true} 
-          data={feedbackAnswwer} keyExtractor={item => item.id} 
+          showsVerticalScrollIndicator={false}
+          horizontal={false} 
+          keyExtractor={item => item.title}
+          data={feedbackAnswwer} 
           renderItem={renderItem} 
         />
-      </View>
+      </FlatListView>
 
-      <TouchableOpacity
-        onPress={makeCorrections}
-        activeOpacity={0.8}
-        style={styles.button}
-      >
-        <Text style={styles.buttonText}>
-          Realizar correções
-        </Text>
-      </TouchableOpacity>
-    </View>
+      <ButtonContainer>
+        <Button onPress={goMakeCorrections} activeOpacity={0.8}>
+          <ButtonText>
+            Realizar correções
+          </ButtonText>
+        </Button>
+
+        <FontAwesome name="trash" color="red" size={32} />
+      </ButtonContainer>
+    </Card>
   );
 }

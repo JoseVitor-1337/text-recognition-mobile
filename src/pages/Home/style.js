@@ -1,58 +1,57 @@
-import { StyleSheet } from "react-native";
+import styled from 'styled-components'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "space-between",
-    
-  },
-  background: {
-    flex: 1,
-    resizeMode: "contain",
-    justifyContent: "center"
-  },
-  imageContainer: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    alignSelf: "stretch",
+export const Background = styled.ImageBackground`
+  flex: 1;
+  justify-content: center;
+`
 
-  },
-  image: {
-    width: 80,
-    height: 80,
-    borderRadius: 50,
-    backgroundColor: "transparent",
-  },
-  title: {
-    fontSize: 20,
-    fontFamily: "Roboto_700Bold",
-    textAlign: "justify",
-    color: "#FFFFFF",
-  },
-  textContainer: {
-    flex:1,
-    alignItems: "center",
-    justifyContent: "space-around",
-    padding: 10,
-    paddingTop: 50,
-  },
-  button: {
-    height: 50,
-    padding: 10,
-    alignSelf: "stretch",
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#FFFFFF",
-    borderRadius: 20,
-  },
-  buttonText: {
-    fontSize: 16,
-    fontFamily: "Roboto_700Bold",
-    textAlign: "center",
-    color: "#536DFE",
-  },
-});
+export const ImageContainer = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+`
 
-export default styles;
+export const Image = styled.Image`
+  width: 120px;
+  height: 120px;
+  border-radius: 50px;
+  background-color: transparent;
+`
+
+
+export const Title = styled.Text`
+  font-size: 20px;
+  font-family: "Roboto_700Bold";
+  text-align: justify;
+  color: #FFFFFF;
+`
+
+export const TextContainer = styled.View`
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  padding-top: 50px;
+`
+
+
+export const Button = styled.TouchableOpacity`
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+`
+
+
+export const ButtonText = styled.Text`
+  font-size: 16px;
+  font-family: "Roboto_700Bold";
+  text-align: center;
+  color: #536DFE;
+`
+

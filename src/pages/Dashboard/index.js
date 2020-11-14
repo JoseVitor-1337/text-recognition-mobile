@@ -1,22 +1,19 @@
 import React, { useState } from "react";
-import { View, TouchableOpacity, Text, FlatList } from "react-native";
 import CardFeedback from './components/CardFeedback'
 
-import styles from "./style";
+import { ListContainer, FlatListContainer, Footer,  Button, ButtonText } from "./style";
 
 import logo from "../../assets/images/logo.png";
 
 import API from "../../services/api";
 
-export default function Dashboard() {
+export default function Dashboard({ navigation }) {
   const [camera, setCamera] = useState(null);
 
   async function takePicture() {
     if (camera) {
       try {
         const picture = await camera.current.takePictureAsync();
-
-        API.post("");
 
         console.log(picture);
       } catch (error) {
@@ -44,33 +41,37 @@ export default function Dashboard() {
     },
   ];
 
+  function addNewFeedback() {
+    navigation.navigate("CreateFeedback");  
+  }
+
+  
+  function goMakeCorrections() {
+    navigation.navigate("Corrections"); 
+  }
+
   const renderItem = ({ item }) => (
-    <CardFeedback makeCorrections={makeCorrections} feedback={item} />
+    <CardFeedback goMakeCorrections={goMakeCorrections} feedback={item} />
   );
   
-  async function addNewFeedback() {}
-
-  async function makeCorrections() {}
 
   return (
     <>
-      <View style={styles.container} >
-        <FlatList 
+      <ListContainer  >
+        <FlatListContainer 
           data={data} 
+          showsHorizontalScrollIndicator={false}
+          horizontal={true}
           keyExtractor={item => item.id} 
           renderItem={renderItem}
         />
-         
-      </View>
+      </ListContainer>
       
-      <View style={styles.footer}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={addNewFeedback}
-        >
-          <Text style={styles.buttonText}>Adicionar novo Gabarito</Text>
-        </TouchableOpacity>
-      </View>
+      <Footer>
+        <Button onPress={addNewFeedback}>
+          <ButtonText>Adicionar novo Gabarito</ButtonText>
+        </Button>
+      </Footer>
     </>
   );
 }

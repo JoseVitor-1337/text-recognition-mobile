@@ -6,6 +6,8 @@ const { Navigator, Screen } = createStackNavigator();
 
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
+import CreateFeedback from "./pages/CreateFeedback";  
+import Corrections from "./pages/Corrections";
 
 export default function Routes() {
   return (
@@ -13,6 +15,8 @@ export default function Routes() {
       <Navigator screenOptions={{ headerShown: false }}>
         <Screen name="Home" component={Home} />
         <Screen name="Dashboard" component={Dashboard} />
+        <Screen name="CreateFeedback" component={CreateFeedback} />
+        <Screen name="Corrections" component={Corrections} />
       </Navigator>
     </NavigationContainer>
   );

@@ -1,43 +1,32 @@
-import { StyleSheet } from "react-native";
+import styled from 'styled-components'
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 4,
-    paddingTop: 25,
-  },
-  footer: {
-    flex: 1,
-    backgroundColor: "#536DFE",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  cameraBox: {
-    padding: 15,
-    borderStyle: "solid",
-    backgroundColor: "#FFFFFF",
-    marginTop: -70,
-    marginBottom: 10,
-    borderRadius: 100,
+export const ListContainer = styled.SafeAreaView`
+  flex: 6;
+`
 
-    borderStyle: "solid",
-    borderWidth: 4,
-    borderColor: "#536DFE",
-  },
-  button: {
-    height: 50,
-    paddingVertical: 8,
-    paddingHorizontal: 20,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#FFFFFF",
-    borderRadius: 20,
-  },
-  buttonText: {
-    fontSize: 16,
-    fontFamily: "Roboto_500Medium",
-    textAlign: "center",
-    color: "#536DFE",
-  },
-});
+export const FlatListContainer = styled.FlatList`
+`
 
-export default styles;
+export const Footer = styled.View`
+  flex: 1;
+  width: 100%;
+  background-color: #536DFE;
+  align-items: center;
+  justify-content: center;
+`
+
+export const Button = styled.TouchableOpacity`
+  height: 50px;
+  padding: 8px 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+`
+
+export const ButtonText = styled.Text`
+  font-size: 16px;
+  font-family: Roboto_500Medium;
+  text-align: center;
+  color: #536DFE;
+`

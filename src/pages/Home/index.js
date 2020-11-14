@@ -1,16 +1,9 @@
 import React from "react";
-import {
-  SafeAreaView,
-  View,
-  Text,
-  TouchableOpacity,
-  ImageBackground,
-  Image,
-} from "react-native";
 
 import background from "../../assets/images/background.png";
 import logo from "../../assets/images/logo.png";
-import styles from "./style";
+
+import { Background, Image, ImageContainer, Button, Title, ButtonText, TextContainer } from "./style";
 
 export default function Home({ navigation }) {
   function goToCamera() {
@@ -18,30 +11,27 @@ export default function Home({ navigation }) {
   }
 
 
-
-
   return (
    
-      <ImageBackground source={background} style={styles.background}>
-        <View style={styles.imageContainer}>
+      <Background source={background} >
+        <ImageContainer>
           <Image source={logo} resizeMode="cover" />
-        </View>
+        </ImageContainer>
 
-        <View style={styles.textContainer}>
-          <Text style={styles.title}>
+        <TextContainer >
+          <Title >
             Correção automática de cartões respostas de provas aplicadas em vertibulares e concursos.
-          </Text>
-          <TouchableOpacity
+          </Title>
+          <Button
             onPress={goToCamera}
             activeOpacity={0.8}
-            style={styles.button}
           >
-            <Text style={styles.buttonText}>
+            <ButtonText >
               Iniciar Sessão
-            </Text>
-          </TouchableOpacity>
-        </View>
-      </ImageBackground>
+            </ButtonText>
+          </Button>
+        </TextContainer>
+      </Background>
      
   );
 }
