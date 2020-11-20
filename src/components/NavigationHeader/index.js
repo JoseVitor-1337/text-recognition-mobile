@@ -6,7 +6,7 @@ import {
   Link,
 } from "./style.js";
 
-export default function NavigationHeader({ goTo, pageTitle }) {
+export default function NavigationHeader({ navigation, goTo, pageTitle }) {
 
   function goBack() {
     navigation.navigate(goTo);

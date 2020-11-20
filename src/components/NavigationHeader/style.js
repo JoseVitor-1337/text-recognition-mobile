@@ -2,10 +2,12 @@ import styled from "styled-components";
 
 export const Header = styled.View`
   flex: 2;
+  width: 100%;
   align-items: center;
   flex-direction: row;
-  justify-content: space-around;
-  background-color: #ffffff;
+  justify-content:space-around;
+  background-color: #FFFFFF;
+ 
 `;
 
 export const Link = styled.Text`

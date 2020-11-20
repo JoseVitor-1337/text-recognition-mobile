@@ -2,8 +2,6 @@ import React from "react";
 import { View, FlatList, Dimensions } from "react-native";
 import logo from "../../../../assets/images/logo.png";
 
-import Button from "../../../../components/Button";
-
 import {
   Card,
   Header,
@@ -20,7 +18,7 @@ import {
   FeedbackContainer,
 } from "./style";
 
-export default function CardFeedback({ feedback, goMakeCorrections }) {
+export default function CardFeedback({ feedback }) {
 
   const feedbackAnswwer = [
     {
@@ -66,26 +64,29 @@ export default function CardFeedback({ feedback, goMakeCorrections }) {
     },
   ];
 
-  const renderItem = ({ item }) => (
-    <FeedbackContainer>
-      <Title>{item.title}</Title>
-      <TableContainer>
-        {item.answers.map((alternative) => (
-          <Table key={alternative.number}>
-            <NumberDiv>
-              <TableTextNumber>{alternative.number}</TableTextNumber>
-            </NumberDiv>
-            <LetterDiv>
-              <TableText>{alternative.letter}</TableText>
-            </LetterDiv>
-          </Table>
-        ))}
-      </TableContainer>
-    </FeedbackContainer>
-  );
+  const renderItem = ({ item }) => {
+    console.log(item)
+    return (
+      <FeedbackContainer>
+        <Title>{item.title}</Title>
+        <TableContainer>
+          {item.answers.map((alternative) => (
+            <Table key={alternative.number}>
+              <NumberDiv>
+                <TableTextNumber>{alternative.number}</TableTextNumber>
+              </NumberDiv>
+              <LetterDiv>
+                <TableText>{alternative.letter}</TableText>
+              </LetterDiv>
+            </Table>
+          ))}
+        </TableContainer>
+      </FeedbackContainer>
+    )
+  };
 
   return (
-    <Card width={Dimensions.get("window").width} >
+    <Card width={Dimensions.get("window").width}>
       <Header>
         <Image source={logo} resizeMode="contain" />
         <View>
@@ -94,23 +95,16 @@ export default function CardFeedback({ feedback, goMakeCorrections }) {
         </View>
       </Header>
 
-      <FlatListView >
+      <FlatListView height={Dimensions.get("window").height - 240}>
         <FlatList
           showsVerticalScrollIndicator={false}
-          horizontal={false}
           keyExtractor={(item) => item.title}
           data={feedbackAnswwer}
           renderItem={renderItem}
         />
       </FlatListView>
 
-      <Button
-        color="#FFFFFF"
-        backgroundColor="#536dfe"
-        onPress={goMakeCorrections}
-        activeOpacity={0.8}
-        text="Realizar correções"
-      />
+    
     </Card>
   );
 }

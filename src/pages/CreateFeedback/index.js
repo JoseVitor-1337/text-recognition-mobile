@@ -32,9 +32,6 @@ export default function CreateFeeback({ navigation }) {
     }
   }
 
-  function goBack() {
-    navigation.navigate("Dashboard");
-  }
 
   function goToFeedbackPreview() {
     navigation.navigate("FeedbackPreview", {
@@ -42,9 +39,10 @@ export default function CreateFeeback({ navigation }) {
     });
   }
 
+
   return (
     <Container>
-      <NavigationHeader goTo="Dashboard" pageTitle="Criação do gabarito" />
+      <NavigationHeader navigation={navigation} goTo="Dashboard" pageTitle="Criação do gabarito" />
       <Body>
         {loading ? (
           <Loading loading={loading} text="Carregando imagem..." />

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import CardFeedback from "./components/CardFeedback";
 
 import Button from "../../components/Button";
@@ -8,17 +8,17 @@ import { ListContainer, FlatListContainer, Footer } from "./style";
 export default function Dashboard({ navigation }) {
   const data = [
     {
-      id: 1,
+      id: "1",
       description: "GABARITO OFICIAL FINAL",
       date: "10/12/2019",
     },
     {
-      id: 2,
+      id: "2",
       description: "GABARITO OFICIAL FINAL",
       date: "10/12/2018",
     },
     {
-      id: 3,
+      id: "3",
       description: "GABARITO OFICIAL FINAL",
       date: "10/12/2017",
     },
@@ -35,6 +35,9 @@ export default function Dashboard({ navigation }) {
   const renderItem = ({ item }) => (
     <CardFeedback goMakeCorrections={goMakeCorrections} feedback={item} />
   );
+
+  console.log(data)
+
 
   return (
     <>

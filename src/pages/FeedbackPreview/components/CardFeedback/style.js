@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Card = styled.SafeAreaView`
   width: ${(props) => props.width};
   padding: 10px;
-
 `;
 
 export const Header = styled.View`
@@ -11,7 +10,7 @@ export const Header = styled.View`
   align-items: center;
   justify-content: flex-start;
   padding: 10px 0;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 `;
 
 export const Image = styled.Image`
@@ -86,9 +85,9 @@ export const TableText = styled.Text`
 `;
 
 export const FlatListView = styled.View`
-  flex: 4;
+  height: ${(props) => props.height};
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   border-radius: 20px;
   border: 1px solid #d9d9d9;
 `;
