@@ -50,6 +50,7 @@ export default function Dashboard({ navigation }) {
 
       <Footer>
         <Button
+          activeOpacity={0.8}
           onPress={goToAddNewFeedbackPage}
           text="Adicionar novo Gabarito"
         />

@@ -30,6 +30,7 @@ export default function Home({ navigation }) {
           vertibulares e concursos.
         </Title>
         <Button
+          width="100%"
           onPress={goToDashboard}
           activeOpacity={0.8}
           text="Iniciar Sessão"

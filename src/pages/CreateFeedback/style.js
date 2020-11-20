@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-import { Feather } from "@expo/vector-icons";
-
 export const Container = styled.SafeAreaView`
   flex: 1;
   padding-top: 25px;
@@ -22,18 +20,27 @@ export const Link = styled.Text`
   color: rgba(0, 0, 0, 0.85);
 `;
 
-export const ArrowLeftIcon = styled(Feather)``;
-
-export const CameraIcon = styled(Feather)`
-  margin-top: -50px;
-`;
-
 export const Body = styled.View`
-  flex: 15;
+  flex: 14;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
 `;
+
+export const CameraIconBox = styled.TouchableOpacity`
+  margin-top: -50px;
+  padding: 12px;
+  flex-direction: row;
+  align-items:center;
+  justify-content:center;
+  background-color: #FFFFFF;
+  border-radius: 50px;
+  border: 4px solid #536dfe;
+`;
+
 
 export const Footer = styled.View`
-  flex: 3;
+  flex: 4;
   align-items: center;
   justify-content: space-around;
   background-color: #536dfe;

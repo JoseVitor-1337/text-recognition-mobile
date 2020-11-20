@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Button = styled.TouchableOpacity`
   height: 40px;
+  width: ${props => props.width || 'auto'};
   padding: 5px 20px;
   align-items: center;
   justify-content: center;
