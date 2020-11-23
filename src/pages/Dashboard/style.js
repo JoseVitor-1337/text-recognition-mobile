@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const ListContainer = styled.SafeAreaView`
   flex: 6;
+  padding-top: 15px;
+  background-color: #FFFFFF;
 `;
 
 export const FlatListContainer = styled.FlatList``;

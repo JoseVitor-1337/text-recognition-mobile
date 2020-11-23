@@ -5,7 +5,7 @@ import CardFeedback from "./components/CardFeedback";
 import NavigationHeader from '../../components/NavigationHeader'
 import Button from "../../components/Button";
 
-import { ListContainer, Container } from "./style";
+import { ListContainer, Container, ButtonRow } from "./style";
 
 export default function FeedbackPreview({ route, navigation }) {
  
@@ -18,7 +18,11 @@ export default function FeedbackPreview({ route, navigation }) {
   }
  
   function saveFeedback() {
-    console.log("saveFeedback")
+    navigation.navigate("Dashboard")
+  }
+
+  function resetFeedback() {
+    navigation.navigate("CreateFeedback")
   }
 
   console.log(data)
@@ -32,13 +36,24 @@ export default function FeedbackPreview({ route, navigation }) {
 
         <CardFeedback feedback={data} />
 
+        <ButtonRow>
+          <Button
+            backgroundColor="#00d600"
+            color="#FFFFFF"
+            activeOpacity={0.8}
+            onPress={saveFeedback}
+            text="Salvar Gabarito"
+          />
+
         <Button
-          backgroundColor="#00d600"
+          backgroundColor="#db0f27"
           color="#FFFFFF"
           activeOpacity={0.8}
-          onPress={saveFeedback}
-          text="Salvar Gabarito"
+          onPress={resetFeedback}
+          text="Cancelar"
         />
+        </ButtonRow>
+      
       </ListContainer>
 
     </Container>

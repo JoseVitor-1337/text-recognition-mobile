@@ -9,6 +9,8 @@ import Dashboard from "./pages/Dashboard";
 import CreateFeedback from "./pages/CreateFeedback";
 import Corrections from "./pages/Corrections";
 import FeedbackPreview from "./pages/FeedbackPreview";
+import CorrectionPreview from "./pages/CorrectionPreview";
+import MakeCorrection from "./pages/MakeCorrection";
 
 export default function Routes() {
   return (
@@ -19,6 +21,8 @@ export default function Routes() {
         <Screen name="CreateFeedback" component={CreateFeedback} />
         <Screen name="Corrections" component={Corrections} />
         <Screen name="FeedbackPreview" component={FeedbackPreview} />
+        <Screen name="CorrectionPreview" component={CorrectionPreview} />
+        <Screen name="MakeCorrection" component={MakeCorrection} />
       </Navigator>
     </NavigationContainer>
   );

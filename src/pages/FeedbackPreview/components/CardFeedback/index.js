@@ -85,6 +85,7 @@ export default function CardFeedback({ feedback }) {
     )
   };
 
+
   return (
     <Card width={Dimensions.get("window").width}>
       <Header>

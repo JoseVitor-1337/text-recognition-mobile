@@ -29,7 +29,7 @@ export default function Dashboard({ navigation }) {
   }
 
   function goMakeCorrections() {
-    navigation.navigate("Corrections");
+    navigation.navigate("MakeCorrection");
   }
 
   const renderItem = ({ item }) => (

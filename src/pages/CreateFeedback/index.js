@@ -60,7 +60,7 @@ export default function CreateFeeback({ navigation }) {
         </CameraIconBox>
         <Button
           onPress={goToFeedbackPreview}
-          text="Mostrar resultados parciais"
+          text="Mostrar resultado parcial"
         />
       </Footer>
     </Container>

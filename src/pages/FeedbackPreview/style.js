@@ -14,3 +14,12 @@ export const ListContainer = styled.SafeAreaView`
   background-color: #FFFFFF;
 `;
 
+export const ButtonRow = styled.View`
+  width: 90%;
+  flex-direction: row;
+  padding: 10px 0;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
+
+`
